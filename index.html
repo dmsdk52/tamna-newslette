@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>탐나 커리어 레벨업 | 2026년 4월호</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:    #1428a0;
+  --blue2:   #1a3fc4;
+  --blue3:   #2d6ef7;
+  --teal:    #00b5b8;
+  --teal2:   #00d4d8;
+  --amber:   #f59e0b;
+  --coral:   #f26b5b;
+  --white:   #ffffff;
+  --offwhite:#f6f8ff;
+  --g100:    #f0f3ff;
+  --g200:    #dde3f8;
+  --g400:    #9aaad4;
+  --g600:    #5a6a9a;
+  --black:   #0a0e1a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
+
+/* scrollbar */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--g100)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  height:66px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(20,40,160,0.08);
+  box-shadow:0 2px 24px rgba(20,40,160,0.06);
+}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-mark{
+  width:38px;height:38px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue),var(--blue3));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:13px;letter-spacing:-0.5px;
+  box-shadow:0 4px 12px rgba(20,40,160,0.3);
+}
+.nav-name{font-size:14px;font-weight:700;color:var(--blue);letter-spacing:-0.3px}
+.nav-sub{font-size:11px;color:var(--g400);margin-top:1px}
+.nav-links{display:flex;gap:36px}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--g600);
+  text-decoration:none;transition:color .2s;letter-spacing:.2px;
+}
+.nav-links a:hover{color:var(--blue)}
+.nav-tag{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  background:var(--blue);color:#fff;
+  padding:5px 14px;border-radius:100px;letter-spacing:.5px;
+}
+
+/* ─── HERO (BLUE) ─── */
+.hero{
+  margin-top:66px;min-height:100vh;
+  background:linear-gradient(135deg,#0d1f8a 0%,var(--blue) 45%,#1e4dd4 100%);
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-blob1{
+  position:absolute;top:-15%;right:-8%;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,181,184,.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-blob2{
+  position:absolute;bottom:-20%;left:15%;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,110,247,.18) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-dots{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:90px 64px 90px 80px;position:relative;z-index:2;
+}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:8px 18px;border-radius:100px;margin-bottom:36px;width:fit-content;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-pill span{font-size:12px;color:rgba(255,255,255,.9);font-weight:500}
+.hero-eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--teal);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px}
+.hero-h1{
+  font-size:62px;font-weight:900;color:#fff;
+  line-height:1.05;letter-spacing:-2.5px;margin-bottom:22px;
+}
+.hero-h1 em{color:var(--teal);font-style:normal}
+.hero-p{font-size:16px;color:rgba(255,255,255,.65);line-height:1.8;font-weight:300;letter-spacing:-.2px}
+.hero-right{
+  display:flex;align-items:center;justify-content:center;
+  padding:90px 80px 90px 40px;position:relative;z-index:2;
+}
+.hero-card{
+  width:100%;max-width:420px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:24px;padding:40px;
+  backdrop-filter:blur(24px);
+  box-shadow:0 32px 80px rgba(0,0,0,.2);
+}
+.hcard-label{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:6px}
+.hcard-title{font-size:20px;font-weight:700;color:#fff;line-height:1.45;margin-bottom:24px;letter-spacing:-.4px}
+.toc{list-style:none}
+.toc li{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.toc li:last-child{border:none}
+.toc-n{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;color:var(--teal);min-width:18px;margin-top:1px}
+.toc-t{font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;flex:1}
+.toc-b{
+  font-size:9px;font-weight:700;padding:2px 8px;border-radius:100px;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.4);white-space:nowrap;
+}
+
+/* ─── SECTION HELPERS ─── */
+.wrap{max-width:1280px;margin:0 auto;padding:0 80px}
+.lbl{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.lbl.blue{color:var(--blue3)}
+.lbl.teal{color:var(--teal)}
+.lbl.white{color:var(--teal)}
+h2.stitle{font-size:42px;font-weight:900;letter-spacing:-1.5px;line-height:1.12;margin-bottom:56px}
+h2.stitle .d{color:var(--g400)}
+h2.stitle .dw{color:rgba(255,255,255,.25)}
+
+/* ─── NEWS (WHITE) ─── */
+.news-sec{padding:110px 0;background:var(--white)}
+.news-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:22px}
+.ncard{
+  border-radius:20px;overflow:hidden;
+  border:1px solid var(--g200);
+  background:var(--white);
+  transition:transform .3s,box-shadow .3s;cursor:pointer;
+}
+.ncard:hover{transform:translateY(-8px);box-shadow:0 28px 64px rgba(20,40,160,.12)}
+.nthumb{
+  height:190px;display:flex;align-items:center;justify-content:center;
+  font-size:46px;position:relative;overflow:hidden;
+}
+.ncard.big .nthumb{height:252px}
+.nthumb-bg{position:absolute;inset:0}
+.nthumb-icon{position:relative;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))}
+.nbody{padding:24px;background:#fff}
+.ntag{
+  display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;padding:3px 11px;border-radius:100px;margin-bottom:11px;
+}
+.t-blue{background:#eaedfc;color:var(--blue)}
+.t-teal{background:#ddfafa;color:#007a72}
+.t-amber{background:#fef3d8;color:#8a5500}
+.nhl{font-size:16px;font-weight:700;color:var(--black);line-height:1.45;margin-bottom:10px;letter-spacing:-.3px}
+.ncard.big .nhl{font-size:20px}
+.nex{font-size:12px;color:var(--g600);line-height:1.7;margin-bottom:14px}
+.nmeta{font-family:'DM Sans',sans-serif;font-size:10px;color:var(--g400)}
+
+/* ─── TRENDS (BLUE) ─── */
+.trends-sec{padding:110px 0;background:var(--blue)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;padding:36px;position:relative;overflow:hidden;
+  transition:background .3s,border-color .3s,transform .3s;cursor:pointer;
+}
+.tcard:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18);transform:translateY(-4px)}
+.tcard-bgn{
+  position:absolute;top:12px;right:20px;
+  font-family:'DM Sans',sans-serif;font-size:84px;font-weight:700;letter-spacing:-6px;
+  color:rgba(255,255,255,.04);line-height:1;pointer-events:none;
+}
+.tcard-icon{font-size:32px;margin-bottom:22px;display:block}
+.tcard-kw{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
+.tcard-title{font-size:19px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:14px;letter-spacing:-.4px}
+.tcard-desc{font-size:12px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:24px}
+.tpills{display:flex;flex-wrap:wrap;gap:7px}
+.tpill{font-size:10px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:100px}
+
+/* ─── PROGRAMS (WHITE) ─── */
+.prog-sec{padding:110px 0;background:var(--offwhite)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pcard{
+  background:var(--white);border-radius:20px;padding:34px;
+  border:1px solid var(--g200);
+  box-shadow:0 4px 24px rgba(20,40,160,.05);
+  transition:transform .25s,box-shadow .25s;
+}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(20,40,160,.1)}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.pcard-icon{font-size:30px}
+.pbadge{font-size:10px;font-weight:700;padding:5px 13px;border-radius:100px}
+.pb-blue{background:#eaedfc;color:var(--blue)}
+.pb-teal{background:#ddfafa;color:#007a72}
+.pb-amber{background:#fef3d8;color:#8a5500}
+.pb-coral{background:#fdeae7;color:#b03a2c}
+.pcard-title{font-size:17px;font-weight:700;color:var(--black);line-height:1.4;margin-bottom:10px;letter-spacing:-.3px}
+.pcard-desc{font-size:13px;color:var(--g600);line-height:1.7;margin-bottom:16px}
+.pcard-date{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--blue);
+  border-top:1px solid var(--g200);padding-top:14px;
+  display:flex;align-items:center;gap:6px;
+}
+
+/* ─── MISSION (BLUE DARK) ─── */
+.mission-sec{
+  padding:90px 0;
+  background:linear-gradient(135deg,#0b1870 0%,#1428a0 60%,#1e3fb5 100%);
+  position:relative;overflow:hidden;
+}
+.mission-sec::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.mission-inner{display:flex;align-items:center;justify-content:space-between;gap:60px;position:relative;z-index:2}
+.mission-left{flex:1}
+.mission-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.85;max-width:500px;margin-top:16px}
+.mission-areas{display:flex;gap:12px;flex-shrink:0}
+.marea{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;padding:20px 16px;text-align:center;min-width:86px;
+  transition:background .2s,transform .2s;cursor:pointer;
+}
+.marea:hover{background:rgba(255,255,255,.15);transform:translateY(-3px)}
+.marea-icon{font-size:24px;margin-bottom:10px}
+.marea-txt{font-size:11px;color:rgba(255,255,255,.65);font-weight:500;line-height:1.4}
+
+/* ─── CTA (WHITE) ─── */
+.cta-sec{padding:110px 0;background:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-sec::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(20,40,160,.06) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-inner{position:relative;z-index:2}
+.cta-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--blue3);text-transform:uppercase;margin-bottom:18px}
+.cta-title{
+  font-size:52px;font-weight:900;color:var(--black);
+  letter-spacing:-2px;line-height:1.1;margin-bottom:18px;
+}
+.cta-title span{color:var(--blue)}
+.cta-sub{font-size:15px;color:var(--g600);line-height:1.75;max-width:480px;margin:0 auto 44px}
+.cta-btns{display:flex;gap:14px;justify-content:center}
+.btn-p{
+  padding:16px 38px;background:var(--blue);color:#fff;
+  border-radius:100px;font-size:14px;font-weight:700;
+  text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;
+  display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 8px 28px rgba(20,40,160,.28);
+}
+.btn-p:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 14px 36px rgba(20,40,160,.35)}
+.btn-s{
+  padding:16px 38px;background:var(--g100);color:var(--blue);
+  border-radius:100px;font-size:14px;font-weight:700;
+  text-decoration:none;transition:transform .2s,background .2s;
+  display:inline-flex;align-items:center;gap:8px;border:1px solid var(--g200);
+}
+.btn-s:hover{background:var(--g200);transform:translateY(-2px)}
+
+/* ─── FOOTER (BLUE) ─── */
+footer{
+  background:var(--blue);padding:36px 80px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.f-brand{font-size:14px;font-weight:700;color:#fff}
+.f-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px}
+.f-right{text-align:right}
+.f-name{font-size:13px;color:rgba(255,255,255,.75)}
+.f-info{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px}
+
+/* ─── FADE ANIMATION ─── */
+.fi{opacity:1 !important;transform:none !important;}
+
+.fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-mark">JD</div>
+    <div>
+      <div class="nav-name">제주더큰내일센터</div>
+      <div class="nav-sub">취업팀 뉴스레터</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#news">뉴스</a>
+    <a href="#trends">채용트렌드</a>
+    <a href="#programs">프로그램</a>
+    <a href="#cta">상담신청</a>
+  </div>
+  <div class="nav-tag">2026 APR</div>
+</nav>
+
+<!-- ── HERO (BLUE) ── -->
+<section class="hero">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-dots"></div>
+
+  <div class="hero-left">
+    <div class="hero-pill">
+      <div class="hero-dot"></div>
+      <span>탐나 커리어 레벨업 · 2026년 4월호</span>
+    </div>
+    <div class="hero-eyebrow">ISSUE 04 · 2026</div>
+    <h1 class="hero-h1">내 경험을<br><em>직무 언어로</em><br>구체화하라</h1>
+    <p class="hero-p">Job-Fit의 시작 —<br>지원 횟수가 아닌 타겟 직무의<br>정확한 조준이 핵심입니다.</p>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hcard-label">이번 호 목차</div>
+      <div class="hcard-title">탐나 커리어 레벨업<br>2026년 4월호</div>
+      <ul class="toc">
+        <li><span class="toc-n">01</span><span class="toc-t">[Cover Story] 2026 상반기 채용 트렌드</span><span class="toc-b">트렌드</span></li>
+        <li><span class="toc-n">02</span><span class="toc-t">[Column] 내 경험의 재구성</span><span class="toc-b">칼럼</span></li>
+        <li><span class="toc-n">03</span><span class="toc-t">[산업 Insight] 지능형 관광 · Travel-Tech</span><span class="toc-b">산업</span></li>
+        <li><span class="toc-n">04</span><span class="toc-t">[직무 Focus] 희망직무 분석</span><span class="toc-b">직무</span></li>
+        <li><span class="toc-n">05</span><span class="toc-t">[이달의 Mission] 경험 데이터 구축하기</span><span class="toc-b">미션</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS (WHITE) ── -->
+<section class="news-sec" id="news">
+  <div class="wrap">
+    <div class="lbl blue fi">이달의 뉴스</div>
+    <h2 class="stitle fi">커리어 레벨업 <span class="d">핵심 인사이트</span></h2>
+    <div class="news-grid fi">
+
+      <div class="ncard big">
+        <div class="nthumb">
+          <div class="nthumb-bg" style="background:linear-gradient(135deg,#0c1f8a 0%,#2d6ef7 100%)"></div>
+          <div class="nthumb-icon">🎯</div>
+        </div>
+        <div class="nbody">
+          <span class="ntag t-blue">Cover Story</span>
+          <h3 class="nhl">'단순 반복 지원'과 직무 미설정의 한계 — 2026 상반기 채용 트렌드</h3>
+          <p class="nex">현재 채용의 핵심은 현업 과제를 즉시 해결할 '직무 적합성(Job-Fit)'입니다. 소통 능력 같은 모호한 표현이나 수치·키워드가 빠진 자소서는 경쟁력을 잃고 있습니다. 타겟 직무 없이는 면접관의 정밀한 질문 앞에서 논리적인 방어가 불가능합니다.</p>
+          <div class="nmeta">2026.04 · 탐나 커리어 레벨업</div>
+        </div>
+      </div>
+
+      <div class="ncard">
+        <div class="nthumb">
+          <div class="nthumb-bg" style="background:linear-gradient(135deg,#006268 0%,#00b5b8 100%)"></div>
+          <div class="nthumb-icon">✍️</div>
+        </div>
+        <div class="nbody">
+          <span class="ntag t-teal">Column</span>
+          <h3 class="nhl">성과 중심의 '경험 리스트업'과 STAR 스토리텔링</h3>
+          <p class="nex">'내가 무엇을 했는가'가 아닌 '기업의 문제 해결에 어떻게 기여하는가'라는 직무 관점으로 경험을 재구성하세요. 숫자로 성과를 증명하는 것이 핵심입니다.</p>
+          <div class="nmeta">2026.04 · 취업팀</div>
+        </div>
+      </div>
+
+      <div class="ncard">
+        <div class="nthumb">
+          <div class="nthumb-bg" style="background:linear-gradient(135deg,#7a4400 0%,#f59e0b 100%)"></div>
+          <div class="nthumb-icon">✈️</div>
+        </div>
+        <div class="nbody">
+          <span class="ntag t-amber">산업 Insight</span>
+          <h3 class="nhl">지능형 관광 서비스와 Travel-Tech 융합형 인재 수요</h3>
+          <p class="nex">AI·빅데이터로 소비 성향을 분석하고 스마트 모빌리티(MaaS)를 기획하는 인재 수요가 폭발적입니다. '인문학적 통찰력'과 '데이터 마인드'의 결합이 핵심입니다.</p>
+          <div class="nmeta">2026.04 · 취업팀</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TRENDS (BLUE) ── -->
+<section class="trends-sec" id="trends">
+  <div class="wrap">
+    <div class="lbl teal fi">기업 채용 트렌드</div>
+    <h2 class="stitle fi" style="color:#fff">2026 상반기 <span class="dw">채용 핵심 키워드</span></h2>
+    <div class="tgrid fi">
+
+      <div class="tcard">
+        <div class="tcard-bgn">01</div>
+        <span class="tcard-icon">🎯</span>
+        <div class="tcard-kw" style="color:var(--teal)">Job-Fit 중심 채용</div>
+        <h3 class="tcard-title">타겟 직무 조준 없이는 서류도 통과 못한다</h3>
+        <p class="tcard-desc">기업은 현업 과제를 즉시 해결할 '직무 적합성'을 최우선으로 봅니다. 직무기술서(JD)를 분석하고 나의 경험과 역량을 논리적으로 연결하는 '키워드 매핑'이 필수입니다.</p>
+        <div class="tpills">
+          <span class="tpill">Job-Fit</span><span class="tpill">JD 분석</span><span class="tpill">키워드 매핑</span>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-bgn">02</div>
+        <span class="tcard-icon">📊</span>
+        <div class="tcard-kw" style="color:var(--amber)">데이터 리터러시</div>
+        <h3 class="tcard-title">경험을 '데이터 언어'로 번역하는 능력</h3>
+        <p class="tcard-desc">교내 행사 기획도 "참가자 데이터를 수집해 동선을 최적화했다"처럼 데이터 관점으로 재해석하면 경쟁력이 생깁니다. Travel-Tech 기업은 코딩보다 데이터 마인드를 우선 봅니다.</p>
+        <div class="tpills">
+          <span class="tpill">데이터 마인드</span><span class="tpill">K/S/E/A</span><span class="tpill">STAR 기법</span>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="tcard-bgn">03</div>
+        <span class="tcard-icon">🤖</span>
+        <div class="tcard-kw" style="color:#f9a89e">생성형 AI 활용</div>
+        <h3 class="tcard-title">AI로 자소서·면접 준비를 스마트하게</h3>
+        <p class="tcard-desc">경험정리 Fit · 자소서 Fit · 면접 Fit — 3대 AI 서비스로 직무역량 문장 자동 변환, 기업별 JD 분석 자소서 생성, 맞춤 예상질문까지 한번에 준비하세요.</p>
+        <div class="tpills">
+          <span class="tpill">경험정리 Fit</span><span class="tpill">자소서 Fit</span><span class="tpill">면접 Fit</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMS (WHITE) ── -->
+<section class="prog-sec" id="programs">
+  <div class="wrap">
+    <div class="lbl blue fi">4월 프로그램</div>
+    <h2 class="stitle fi">이달의 취업 지원 <span class="d">프로그램 안내</span></h2>
+    <div class="pgrid fi">
+
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pcard-icon">💻</div>
+          <span class="pbadge pb-blue">온라인</span>
+        </div>
+        <div class="pcard-title">개인별 커리어 밀착 코칭</div>
+        <div class="pcard-desc">줌(Zoom) 기반 1:1 실시간 화면 공유 방식으로 진행됩니다. 이력서·자기소개서부터 직무 방향 설정까지 개인 맞춤 코칭을 제공합니다.</div>
+        <div class="pcard-date">
+          <a href="https://docs.google.com/spreadsheets/d/1n48lzgBR2IxPEQVkjSNG3P1z_r8oClh4Lb9mGmMgrp4/edit?usp=sharing" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:6px;">
+            📋 코칭 신청하러 가기 →
+          </a>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pcard-icon">🏕️</div>
+          <span class="pbadge pb-teal">오프라인</span>
+        </div>
+        <div class="pcard-title">탐나 레벨업 부트캠프 (1박 2일)</div>
+        <div class="pcard-desc">입사지원서 완성부터 실전 면접까지 몰입형 취업 캠프. 1일차 서류 완성 + 2일차 실전 모의면접 클리닉 (경험면접 BEI + 모바일 녹화 피드백).</div>
+        <div class="pcard-date">📅 2026.4.28(수) ~ 29(목) 10:00~17:00 · 교육장</div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pcard-icon">🤖</div>
+          <span class="pbadge pb-amber">AI 서비스</span>
+        </div>
+        <div class="pcard-title">생성형 AI 취업역량 강화 서비스</div>
+        <div class="pcard-desc">경험정리 Fit · 자소서 Fit · 면접 Fit 3대 서비스로 취업 준비를 스마트하게. 단어 중심 경험을 직무역량 문장으로 자동 변환하고 기업별 JD 맞춤 자소서를 생성합니다.</div>
+        <div class="pcard-date">📅 2026.4.28(월) 출시 예정</div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-top">
+          <div class="pcard-icon">📱</div>
+          <span class="pbadge pb-coral">특강</span>
+        </div>
+        <div class="pcard-title">생성형 AI 활용 가이드 특강</div>
+        <div class="pcard-desc">3대 Fit 서비스 실전 실습 중심 특강. 노트북과 본인 경험 기반 자료를 지참하시면 더욱 효과적입니다.</div>
+        <div class="pcard-date">📅 2026.4.28(화) 14:00~17:00</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MISSION (BLUE DARK) ── -->
+<section class="mission-sec">
+  <div class="wrap">
+    <div class="mission-inner fi">
+      <div class="mission-left">
+        <div class="lbl white">이달의 Mission</div>
+        <h2 class="stitle" style="color:#fff;margin-bottom:0">'경험 데이터' <span class="dw">구축하기</span></h2>
+        <p class="mission-desc">경험정리 5대 영역을 통해 나의 모든 활동을 냉정하게 해체하고 핵심 역량을 발굴하세요.<br>빈칸으로 남은 부분이 이번 달 집중해야 할 <strong style="color:var(--teal)">역량 보완 포인트</strong>입니다.</p>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+          <a href="https://tally.so/r/44v6aY" target="_blank"
+             style="display:inline-flex;align-items:center;gap:8px;
+                    background:var(--teal);color:#fff;
+                    font-size:14px;font-weight:700;
+                    padding:14px 28px;border-radius:100px;
+                    text-decoration:none;
+                    box-shadow:0 8px 24px rgba(0,181,184,.35);
+                    transition:transform .2s,box-shadow .2s;">
+            🎯 미션 수행 하러가기
+          </a>
+          <a href="https://stibee.com/api/v1.0/emails/share/ujGildz-1jLGA0JmyINzCA_jypdoA-0" target="_blank"
+             style="display:inline-flex;align-items:center;gap:8px;
+                    background:rgba(255,255,255,.12);color:#fff;
+                    border:1px solid rgba(255,255,255,.25);
+                    font-size:14px;font-weight:700;
+                    padding:14px 28px;border-radius:100px;
+                    text-decoration:none;
+                    transition:background .2s;">
+            📄 자세히 보기
+          </a>
+        </div>
+      </div>
+      <div class="mission-areas">
+        <div class="marea"><div class="marea-icon">🎓</div><div class="marea-txt">전공<br>학습</div></div>
+        <div class="marea"><div class="marea-icon">💼</div><div class="marea-txt">인턴<br>실습</div></div>
+        <div class="marea"><div class="marea-icon">🤝</div><div class="marea-txt">활동<br>경험</div></div>
+        <div class="marea"><div class="marea-icon">🛠️</div><div class="marea-txt">기술<br>역량</div></div>
+        <div class="marea"><div class="marea-icon">💡</div><div class="marea-txt">아이디어<br>프로젝트</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA (WHITE) ── -->
+<section class="cta-sec" id="cta">
+  <div class="wrap">
+    <div class="cta-inner fi">
+      <div class="cta-eyebrow">1:1 취업 상담</div>
+      <h2 class="cta-title">지금 바로<br><span>상담 신청하세요</span></h2>
+      <p class="cta-sub">이력서 검토부터 면접 준비까지, 취업팀 최은아 매니저가 여러분의 커리어를 함께 설계해드립니다.</p>
+      <div class="cta-btns">
+        <a href="/cdn-cgi/l/email-protection#dab9bfbbeaefeae89ab0beb4b9f4b5a8f4b1a8" class="btn-p">✉️ 이메일 상담 신청</a>
+        <a href="tel:064-720-8912" class="btn-s">📞 064-720-8912</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER (BLUE) ── -->
+<footer>
+  <div>
+    <div class="f-brand">제주더큰내일센터 취업팀</div>
+    <div class="f-sub">탐나 커리어 레벨업 · 2026년 4월호</div>
+  </div>
+  <div class="f-right">
+    <div class="f-name">담당 매니저 | 최은아</div>
+    <div class="f-info"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aecdcbcf9e9b9e9ceec4cac0cd80c1dc80c5dc">[email&#160;protected]</a> · 064-72
